@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Election Trackr</title>
+        <link href="indexStyle.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="icon.ico">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html" class="menu">HOME</a>
+            <!-- <a href="map.html" class="menu">MAP</a> -->
+            <a href="about.html" class="menu">ABOUT</a>
+        </nav>
+        
+        <div class="container">
+            <h1 class="title">Election Trackr</h1>
+        </div>
+
+        <div class="section">
+            <div class="prespage" id="trump">
+                <img src="trump.jpg">
+                <h2>Trump</h2>
+                <div class="facttable" id="trump">
+                    <h3>Trend for the past</h3>
+                    <div class="facts bigfacts">
+                        <p class="facttitle">Minute</p>
+                        <p class="facttext" id="trumptrendminute">+10%</p>
+                    </div>
+                    <div class="facts bigfacts">
+                        <p class="facttitle">Hour</p>
+                        <p class="facttext" id="trumptrendhour">-3.2%</p>
+                    </div>
+                    <br>
+                    <div class="facts bigfacts">
+                        <p class="facttitle">Day</p>
+                        <p class="facttext" id="trumptrendday">+0.5%</p>
+                    </div>
+                    <div class="facts bigfacts">
+                        <p class="facttitle">Week</p>
+                        <p class="facttext" id="trumptrendweek">-25%</p>
+                    </div>
+                    <br>
+                    <h3>Number of tweets during this</h3>
+                    <div class="facts">
+                        <p class="facttitle">Minute</p>
+                        <p class="facttext" id="trumpminute">3</p>
+                    </div>
+                    <div class="facts">
+                        <p class="facttitle">Hour</p>
+                        <p class="facttext" id="trumphour">10</p>
+                    </div>
+                    <br>
+                    <div class="facts">
+                        <p class="facttitle">Day</p>
+                        <p class="facttext" id="trumpday">100</p>
+                    </div>
+                    <div class="facts">
+                        <p class="facttitle">Week</p>
+                        <p class="facttext" id="trumpweek">1000</p>
+                    </div>
+                    <br>
+                    <div class="facts" id="rate">
+                        <p class="facttitle">Rate in tweets/min</p>
+                        <p class="facttext" id="trumprate">3</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prespage" id="biden">
+                <img src="biden.jpg">
+                <h2>Biden</h2>
+                <div class="facttable" id="biden">
+                    <h3>Trend for the past</h3>
+                    <div class="facts bigfacts">
+                        <p class="facttitle">Minute</p>
+                        <p class="facttext">+10%</p>
+                    </div>
+                    <div class="facts bigfacts">
+                        <p class="facttitle">Hour</p>
+                        <p class="facttext">-3.2%</p>
+                    </div>
+                    <br>
+                    <div class="facts bigfacts">
+                        <p class="facttitle">Day</p>
+                        <p class="facttext">+0.5%</p>
+                    </div>
+                    <div class="facts bigfacts">
+                        <p class="facttitle">Week</p>
+                        <p class="facttext">-25%</p>
+                    </div>
+                    <br>
+                    <h3>Number of tweets during this</h3>
+                    <div class="facts">
+                        <p class="facttitle">Minute</p>
+                        <p class="facttext">3</p>
+                    </div>
+                    <div class="facts">
+                        <p class="facttitle">Hour</p>
+                        <p class="facttext">10</p>
+                    </div>
+                    <br>
+                    <div class="facts">
+                        <p class="facttitle">Day</p>
+                        <p class="facttext">100</p>
+                    </div>
+                    <div class="facts">
+                        <p class="facttitle">Week</p>
+                        <p class="facttext">1000</p>
+                    </div>
+                    <br>
+                    <div class="facts" id="rate">
+                        <p class="facttitle">Rate in tweets/min</p>
+                        <p class="facttext">3</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="/__/firebase/7.17.1/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="/__/firebase/7.17.1/firebase-analytics.js"></script>
+        <script src="/__/firebase/7.17.1/firebase-database.js"></script>
+        
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js"></script>
+        <script src="script.js"></script>
+    </body>
+ 
+</html>

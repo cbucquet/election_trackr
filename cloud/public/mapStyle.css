@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Hemihead;
+  src: url("hemihead.ttf");
+}
+
+
+nav {
+    padding: 5px 10px;
+    position: relative;
+    text-align: center;
+    /* width: 1000px; */
+    width: 100%;
+    /* border: 2px solid #dd81f7; */
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+}
+
+.menu {
+    color: white;
+    background: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 0px 5px;
+    padding: 5px;
+    font-family: Hemihead;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.menu:hover {
+    color: black;
+    background-color: white;
+    /* border: 1px solid white; */
+}
+
+
+#map path {
+    fill: #dd81f7;
+}
+
+#map path:hover {
+    fill: #9bf781;
+}
+
+#maptitle {
+    font-family: Hemihead;
+    font-size: 50px;
+    text-align: center;
+    color: #dd81f7;
+}
+
+#radios {
+    position: relative;
+    background-color: tomato;
+    z-index: 5;
+    width: 242px;
+    display: inline-block;
+}
+
+input {
+    display: none;
+}
+
+.radiolabels {
+    color: white;
+    font-family: HemiHead;
+    font-size: 15px;
+    
+}
+
+#radiobackground,
+.radiolabels {
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    padding-top: 10px;
+    margin-right: -3px;
+    z-index: 2;
+    cursor: pointer;
+    outline: 1px solid green;
+}
+#radiobackground {
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+#rad1:checked ~ #radiobackground {
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out;
+}
+#rad2:checked ~ #radiobackground {
+    transform: translateX(120px);
+    transition: transform 0.5s ease-in-out;
+}

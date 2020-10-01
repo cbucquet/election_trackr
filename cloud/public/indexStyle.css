@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Hemihead;
+  src: url("hemihead.ttf");
+}
+
+
+body {
+    background: black;
+}
+
+nav {
+    padding: 5px 10px;
+    position: relative;
+    text-align: center;
+    /* width: 1000px; */
+    width: 100%;
+    /* border: 2px solid #dd81f7; */
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+}
+
+.menu {
+    color: white;
+    background: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 0px 5px;
+    padding: 5px;
+    font-family: Hemihead;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.menu:hover {
+    color: black;
+    background-color: white;
+    /* border: 1px solid white; */
+}
+
+
+h1.title {
+    /* font-family: "Comic Sans MS", cursive, sans-serif; */
+    font-family: Hemihead;
+    font-size: 100px;
+    text-align: center;
+    /* color: #dd81f7; */
+    color: white;
+}
+
+
+.container {
+    /* width: 1000px; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+
+.section {
+    /* width: 490px; */
+    /* min-width: 45%; */
+    text-align: center;
+    overflow: auto;
+    display: block;
+}
+
+.prespage {
+    display: inline-block;
+    position: relative;
+    height: 1400px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 20px;
+}
+
+
+.prespage img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+#trump {
+    margin-right: 1px;
+    background-color: lightcoral;
+}
+
+#biden {
+    margin-left: 1px;
+    background-color: lightskyblue;
+}
+
+.section h2{
+    font-family: Hemihead;
+    /* font-size: ; */
+    color: white;
+}
+
+.section h3{
+    font-family: Hemihead;
+    /* font-size: ; */
+    color: white;
+}
+
+
+.facts {
+    height: 120px;
+    width: 120px;
+    border-radius: 10px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+.facttable {
+    display: inline-block;
+    align-items: center;
+}
+
+#trump .facts{
+    background-color: lightcoral;
+    background-color: white;
+}
+#biden .facts{
+    background-color: lightskyblue;
+    background-color: white;
+}
+
+.facttitle {
+    font-family: Hemihead;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.facttext {
+    font-family: Hemihead;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+#trump .facttitle{
+    color: lightcoral;
+}
+
+#trump .facttext{
+    color: lightcoral;
+}
+
+#biden .facttitle{
+    color: lightskyblue;
+}
+
+#biden .facttext{
+    color: lightskyblue;
+}
+
+.bigfacts {
+    width: 150px;
+    height: 150px;
+}
+
+.bigfacts .facttitle {
+    font-size: 20px;
+}
+
+.bigfacts .facttext {
+    font-size: 27px;
+}
+#rate {
+    width: 300px;
+}
