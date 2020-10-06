@@ -27,27 +27,35 @@ var totThisDay = 0;
 //FOR WEEKS + WEEKLY TREND
 const lastWeekBeginning = currentDate - 1000*60*60*24*7;
 const lastWeekEnd = currentDate - 2*1000*60*60*24*7;
-var lastWeekRate = 0;
-var thisWeekRate = 0;
+var lastWeekRate = [0,0];
+var totLastWeek = 0;
+var thisWeekRate = [0,0];
+var totThisWeek = 0;
 
 
 
 // *** MARK - FUNCTIONS ***
 
 function updateCount() {
-    const hourCount = 100;
-    const dayCount = 1000;
-
     const seconds = new Date().getSeconds();
     const minutes = new Date().getMinutes();
+    const hours = new Date().getHours();
+    const days = new Date().getDay()
+
     
     //Update Trump labels
     //console.log(statesRates, commonRate);
     const minuteCount = Math.round(seconds*commonRate[0]);
-    document.getElementById("trumpminute").innerText = secondsCount;
+    document.getElementById("trumpminute").innerText = minuteCount;
+
     const hourCount = Math.round(minutes*thisHourRate[0] + minuteCount);
     document.getElementById("trumphour").innerText = hourCount;
-    //document.getElementById("trumpday").innerText = Math.round(seconds*secondsRate)+dayCount;
+
+    const dayCount = Math.round(hours*thisDayRate[0] + hourCount);
+    document.getElementById("trumpday").innerText = dayCount;
+
+    const weekCount = Math.round(days*thisWeekRate[0] + dayCount);
+    document.getElementById("trumpweek").innerText = dayCount;
 
 
     //Update Biden labels
@@ -70,6 +78,13 @@ function updateTrends() {
   }
   else{
     document.getElementById("trumptrendday").innerText = correctPercentage((thisDayRate[0]-lastDayRate[0])/lastDayRate[0]);
+  }
+
+  if(totLastWeek === 0){
+    document.getElementById("trumptrendweek").innerText = "N/A";
+  }
+  else{
+    document.getElementById("trumptrendweek").innerText = correctPercentage((thisWeekRate[0]-lastWeekRate[0])/lastWeekRate[0]);
   }
 
   //document.getElementById("trumptrendweek").innerText = Math.floor(Math.random() * 11)-5;
@@ -96,13 +111,16 @@ function getCurrentRates() {
       const dateRates = value[keyDate];
       const date = parseInt(keyDate);
 
-      //Current Rates
-      if((lastHourEnd<=date) || (lastDayEnd<=date) || (lastWeekEnd<=date)) { // Check if date is relevant
-        const trumpCurrentRate = Math.max(parseInt(value["trump"]), 0);
-        const bidenCurrentRate = Math.max(parseInt(value["biden"]), 0);
+      
+      const trumpCurrentRate = parseInt(value["trump"])
+      const bidenCurrentRate = parseInt(value["biden"])
+      if(trumpCurrentRate > 0){
         commonRate[0] = trumpCurrentRate;
+      }
+      if(bidenCurrentRate > 0) {
         commonRate[1] =  bidenCurrentRate;
       }
+      console.log(commonRate);
 
       if(lastHourEnd<=date && date<=lastHourBeginning) {
         lastHourRate[0] = (lastHourRate[0]*totLastHour + commonRate[0])/(totLastHour+1);
@@ -115,15 +133,26 @@ function getCurrentRates() {
         totThisHour += 1;
       }
 
-      if(lastHourEnd<=date && date<=lastHourBeginning) {
+      if(lastDayEnd<=date && date<=lastDayBeginning) {
         lastDayRate[0] = (lastDayRate[0]*totLastDay + commonRate[0])/(totLastDay+1);
         lastDayRate[1] = (lastDayRate[1]*totLastDay + commonRate[1])/(totLastDay+1);
         totLastDay += 1;
       }
-      else if(lastHourBeginning<date) {
+      else if(lastDayBeginning<date) {
         thisDayRate[0] = (thisDayRate[0]*totThisDay + commonRate[0])/(totThisDay+1);
         thisDayRate[1] = (thisDayRate[1]*totThisDay + commonRate[1])/(totThisDay+1);
         totThisDay += 1;
+      }
+
+      if(lastWeekEnd<=date && date<=lastWeekBeginning) {
+        lastWeekRate[0] = (lastWeekRate[0]*totLastDay + commonRate[0])/(totLastWeek+1);
+        lastWeekRate[1] = (lastWeekRate[1]*totLastDay + commonRate[1])/(totLastWeek+1);
+        totLastWeek += 1;
+      }
+      else if(lastWeekBeginning<date) {
+        thisWeekRate[0] = (thisWeekRate[0]*totThisDay + commonRate[0])/(totThisWeek+1);
+        thisWeekRate[1] = (thisWeekRate[1]*totThisDay + commonRate[1])/(totThisWeek+1);
+        totThisWeek += 1;
       }
     }
     

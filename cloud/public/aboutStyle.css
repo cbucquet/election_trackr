@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Hemihead;
+  src: url("hemihead.ttf");
+}
+
+
+body {
+    background: black;
+}
+
+nav {
+    padding: 5px 10px;
+    position: relative;
+    text-align: center;
+    /* width: 1000px; */
+    width: 100%;
+    /* border: 2px solid #dd81f7; */
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+}
+
+.menu {
+    color: white;
+    background: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 0px 5px;
+    padding: 5px;
+    font-family: Hemihead;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.menu:hover {
+    color: black;
+    background-color: white;
+    /* border: 1px solid white; */
+}
+
+
+h1.title {
+    /* font-family: "Comic Sans MS", cursive, sans-serif; */
+    font-family: Hemihead;
+    font-size: 50px;
+    /* text-align: center; */
+    /* color: #dd81f7; */
+    color: white;
+}
+
+
