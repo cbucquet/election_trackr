@@ -44,13 +44,24 @@ nav {
 }
 
 
-h1.title {
+h1 {
     /* font-family: "Comic Sans MS", cursive, sans-serif; */
     font-family: Hemihead;
     font-size: 50px;
     /* text-align: center; */
     /* color: #dd81f7; */
     color: white;
+    margin-right: 200px;
+    margin-left: 200px;
 }
 
-
+h3 {
+    /* font-family: "Comic Sans MS", cursive, sans-serif; */
+    font-family: Hemihead;
+    font-size: 10x;
+    /* text-align: center; */
+    /* color: #dd81f7; */
+    color: white;
+    margin-right: 200px;
+    margin-left: 200px;
+}

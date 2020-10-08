@@ -67,21 +67,21 @@ function updateTrends() {
   document.getElementById("trumptrendminute").innerText = correctPercentage(Math.floor(Math.random() * 11)-5);
 
   if(totLastHour === 0){
-    document.getElementById("trumptrendhour").innerText = "N/A";
+    document.getElementById("trumptrendhour").innerText = "...";
   }
   else{
     document.getElementById("trumptrendhour").innerText = correctPercentage((thisHourRate[0]-lastHourRate[0])/lastHourRate[0]);
   }
   
   if(totLastDay === 0){
-    document.getElementById("trumptrendday").innerText = "N/A";
+    document.getElementById("trumptrendday").innerText = "...";
   }
   else{
     document.getElementById("trumptrendday").innerText = correctPercentage((thisDayRate[0]-lastDayRate[0])/lastDayRate[0]);
   }
 
   if(totLastWeek === 0){
-    document.getElementById("trumptrendweek").innerText = "N/A";
+    document.getElementById("trumptrendweek").innerText = "...";
   }
   else{
     document.getElementById("trumptrendweek").innerText = correctPercentage((thisWeekRate[0]-lastWeekRate[0])/lastWeekRate[0]);
@@ -161,8 +161,6 @@ function getCurrentRates() {
   });
 
 }
-
-
 
 
 
